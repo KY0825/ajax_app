@@ -1,7 +1,7 @@
 function check() {
   const posts = document.querySelectorAll(".post");
   posts.forEach(function (post) {
-    if (post.getAttribute("data-load") != null ) {
+    if (post.getAttribute("data-load") != null) {
       return null;
     }
     post.setAttribute("data-load", "true");
@@ -14,7 +14,7 @@ function check() {
       XHR.onload = () => {
         if (XHR.status != 200) {
           alert(`Error ${XHR.status}: ${XHR.statusText}`);
-            return null;
+          return null;          
         }
         const item = XHR.response.post;
         if (item.checked === true) {
